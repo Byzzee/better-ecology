@@ -1,5 +1,6 @@
 -- item.lua
 
+
 -------------
 -- Modules --                                
 -------------
@@ -63,12 +64,63 @@ local windTurbine = {
     type = "item",
     icon = "__better-ecology__/graphics/wind-turbine/wind-turbine-icon.png",
     icon_size = 76,
-    group = "logistics",
+    group = "production",
     subgroup = "energy",
     order = "c[solar-panel]",
     place_result = "wind-turbine",
     stack_size = 50
 }
 
+------------------
+-- Air Purifier --                                
+------------------
 
-data:extend{ecologyModuleCategory, ecologyModule, ecologyModule2, ecologyModule3, windTurbine}
+local airPurifier = {
+    name = "air-purifier",
+    type = "item",
+    icon = "__better-ecology__/graphics/air-purifier/air-purifier-icon.png",
+    icon_size = 160,
+    group = "production",
+    subgroup = "production-machine",
+    order = "a[air-purifier]",
+    place_result = "air-purifier",
+    stack_size = 50
+}
+
+-----------------
+-- Air Filters --                                
+-----------------
+
+local airFilterClean = {
+    name = "air-filter-clean",
+    type = "item",
+    icon = "__better-ecology__/graphics/air-filter/air-filter-clean.png",
+    icon_size = 64,
+    group = "production",
+    subgroup = "production-machine",
+    order = "a[air-purifier]",
+    stack_size = 50
+}
+
+local airFilterDirty = {
+    name = "air-filter-dirty",
+    type = "item",
+    icon = "__better-ecology__/graphics/air-filter/air-filter-dirty.png",
+    icon_size = 64,
+    group = "production",
+    subgroup = "production-machine",
+    order = "a[air-purifier]",
+    stack_size = 50
+}
+
+
+data:extend{
+    ecologyModuleCategory, 
+    ecologyModule, 
+    ecologyModule2, 
+    ecologyModule3, 
+    windTurbine, 
+    airPurifier, 
+    airFilterClean, 
+    airFilterDirty
+}
