@@ -9,8 +9,8 @@ local ecologyModuleRecipe = {
     type = "recipe",
     name = "ecology-module",
     enabled = false,
-    energy_required = 15, -- time to craft in seconds (at crafting speed 1)
-    ingredients = {{"electronic-circuit", 5}, {"advanced-circuit", 5}},
+    energy_required = 5, -- time to craft in seconds (at crafting speed 1)
+    ingredients = {{"effectivity-module", 1}, {"air-filter-clean", 1}},
     result = "ecology-module"
 }
 
@@ -18,8 +18,8 @@ local ecologyModule2Recipe = {
     type = "recipe",
     name = "ecology-module-2",
     enabled = false,
-    energy_required = 30, -- time to craft in seconds (at crafting speed 1)
-    ingredients = {{"advanced-circuit", 5}, {"processing-unit", 5}, {"ecology-module", 4}},
+    energy_required = 10, -- time to craft in seconds (at crafting speed 1)
+    ingredients = {{"effectivity-module-2", 1}, {"air-filter-clean", 2}},
     result = "ecology-module-2"
 }
 
@@ -27,8 +27,8 @@ local ecologyModule3Recipe = {
     type = "recipe",
     name = "ecology-module-3",
     enabled = false,
-    energy_required = 60, -- time to craft in seconds (at crafting speed 1)
-    ingredients = {{"advanced-circuit", 5}, {"processing-unit", 5}, {"ecology-module-2", 5}},
+    energy_required = 20, -- time to craft in seconds (at crafting speed 1)
+    ingredients = {{"effectivity-module-3", 1}, {"air-filter-clean", 5}},
     result = "ecology-module-3"
 }
 
@@ -58,9 +58,9 @@ local airPurifier = {
     result = "air-purifier"
 }
 
-------------------
--- Air Purifier --                                
-------------------
+-----------------
+-- Air Filters --                                
+-----------------
 
 local airFilterCategory = {
     type = "recipe-category",
