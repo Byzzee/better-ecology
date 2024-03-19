@@ -8,8 +8,8 @@
 local ecologyModule1Technology = {
     type = "technology",
     name = "ecology-module",
-    icon = "__better-ecology__/graphics/modules/ecology-module.png",
-    icon_size = 64,
+    icon = "__better-ecology__/graphics/modules/ecology-module-technology.png",
+    icon_size = 256,
     prerequisites = {"effectivity-module"},
     effects = {
         {
@@ -30,8 +30,8 @@ local ecologyModule1Technology = {
 local ecologyModule2Technology = {
     type = "technology",
     name = "ecology-module-2",
-    icon = "__better-ecology__/graphics/modules/ecology-module-2.png",
-    icon_size = 64,
+    icon = "__better-ecology__/graphics/modules/ecology-module-2-technology.png",
+    icon_size = 256,
     prerequisites = {"effectivity-module-2"},
     effects = {
         {
@@ -53,8 +53,8 @@ local ecologyModule2Technology = {
 local ecologyModule3Technology = {
     type = "technology",
     name = "ecology-module-3",
-    icon = "__better-ecology__/graphics/modules/ecology-module-3.png",
-    icon_size = 64,
+    icon = "__better-ecology__/graphics/modules/ecology-module-3-technology.png",
+    icon_size = 256,
     prerequisites = {"effectivity-module-3"},
     effects = {
         {
@@ -82,7 +82,7 @@ local windTurbineTechnology = {
     type = "technology",
     name = "wind-turbine",
     icon = "__better-ecology__/graphics/wind-turbine/wind-turbine-icon.png",
-    icon_size = 76,
+    icon_size = 128,
     prerequisites = {"solar-energy"},
     effects = {
         {
@@ -108,8 +108,8 @@ local windTurbineTechnology = {
 local airPurifierTechnology = {
     type = "technology",
     name = "air-purifier",
-    icon = "__better-ecology__/graphics/air-purifier/air-purifier-icon.png",
-    icon_size = 160,
+    icon = "__better-ecology__/graphics/air-filter/filtering-technology-icon.png",
+    icon_size = 128,
     prerequisites = {"wind-turbine"},
     effects = {
         {
