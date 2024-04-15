@@ -8,15 +8,23 @@
 local sounds = {
     machine_open = {
         filename = "__base__/sound/machine-open.ogg",
-        volume = 0.75
+        volume = 0.5
     },
     machine_close = {
         filename = "__base__/sound/machine-close.ogg",
-        volume = 0.75
+        volume = 0.5
     },
     vehicle_impact = {
         filename = "__base__/sound/car-metal-impact.ogg",
-        volume = 0.75
+        volume = 0.5
+    },
+    wind_turbine_working = {
+        filename = "__better-ecology__/sound/wind-turbine-working.wav",
+        volume = 2.0
+    },
+    air_purifier_working = {
+        filename = "__better-ecology__/sound/air-purifier-working.wav",
+        volume = 2.0
     }
 }
 
@@ -28,7 +36,7 @@ local windTurbine = {
     name = "wind-turbine",
     type = "electric-energy-interface",
     icon = "__better-ecology__/graphics/wind-turbine/wind-turbine-icon.png",
-    icon_size = 32,
+    icon_size = 128,
     localised_description = {"",
       {"entity-description.wind-turbine"},
       {"wind-turbine.generates-electricity"},
@@ -51,6 +59,7 @@ local windTurbine = {
     },
     energy_production = "30kW",
     energy_usage = "0kW",
+    working_sound = sounds.wind_turbine_working,
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,
     vehicle_impact_sound = sounds.vehicle_impact,
@@ -88,7 +97,7 @@ local airPurifier = {
     name = "air-purifier",
     type = "furnace",
     icon = "__better-ecology__/graphics/air-purifier/air-purifier-icon.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {"player-creation", "placeable-neutral", "not-rotatable"},
     minable = {mining_time = 0.5, result = "air-purifier"},
     max_health = 200,
@@ -110,6 +119,7 @@ local airPurifier = {
         emissions_per_minute = -50
     },
     energy_usage = "97087W", -- Чтобы в итоге ровно соточка получилась
+    working_sound = sounds.air_purifier_working,
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,
     vehicle_impact_sound = sounds.vehicle_impact,
