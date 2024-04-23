@@ -116,6 +116,30 @@ local airFilterDirty = {
     stack_size = 50
 }
 
+------------------
+-- Tree Planter --
+------------------
+
+local treePlanter = {
+    name = "tree-planter",
+    type = "item",
+    icon = "__better-ecology__/graphics/tree-planter/tree-planter-icon.png",
+    icon_size = 192,
+    group = "production",
+    subgroup = "energy",
+    order = "z[solar-panel]",
+    place_result = "tree-planter",
+    stack_size = 50
+}
+
+local plantedTree = {
+    name = "planted-tree",
+    type = "item",
+    icon = "__better-ecology__/graphics/tree-planter/tree-icon.png",
+    icon_size = 256,
+    stack_size = 2
+}
+
 
 data:extend{
     ecologyModuleCategory, 
@@ -125,5 +149,7 @@ data:extend{
     windTurbine, 
     airPurifier, 
     airFilterClean, 
-    airFilterDirty
+    airFilterDirty,
+    treePlanter,
+    plantedTree
 }

@@ -97,6 +97,35 @@ local airFilterCleaned = {
     result = "air-filter-clean"
 }
 
+------------------
+-- Tree Planter --
+------------------
+
+local treePlanter = {
+    type = "recipe",
+    name = "tree-planter",
+    enabled = true,
+    energy_required = 10, -- time to craft in seconds (at crafting speed 1)
+    ingredients = {{"electronic-circuit", 5}, {"iron-gear-wheel", 5}, {"steel-plate", 15}},
+    result = "tree-planter"
+}
+
+local treePlantingCategory = {
+    type = "recipe-category",
+    name = "tree-planting"
+}
+
+local plantedTree = {
+    type = "recipe",
+    name = "planted-tree",
+    category = "tree-planting",
+    enabled = true,
+    hidden = true,
+    energy_required = 5, -- time to craft in seconds (at crafting speed 1)
+    ingredients = {{type="fluid", name="water", amount=50}},
+    result = "planted-tree"
+}
+
 
 data:extend{
     ecologyModuleRecipe, 
@@ -107,5 +136,8 @@ data:extend{
     airFilterCategory, 
     airFilterClean, 
     airFilterDirty, 
-    airFilterCleaned
+    airFilterCleaned,
+    treePlanter,
+    treePlantingCategory,
+    plantedTree
 }
