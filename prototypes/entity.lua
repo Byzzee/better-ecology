@@ -116,7 +116,7 @@ local airPurifier = {
 		output_flow_limit = "0W",
         input_flow_limit = "200kW",
         render_no_power_icon = false,
-        emissions_per_minute = -10000
+        emissions_per_minute = -10000 -- За счёт этого и "работает" очищениецвцвцв
     },
     energy_usage = "97087W", -- Чтобы в итоге ровно соточка получилась
     working_sound = sounds.air_purifier_working,
@@ -203,7 +203,7 @@ local treePlanter = {
             filter = "water",
         }
     },
-    energy_usage = "20kW",
+    energy_usage = "19355W",
     energy_source = {
         type = "electric",
         emissions_per_minute = 0,

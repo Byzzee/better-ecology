@@ -82,7 +82,7 @@ local airFilterDirty = {
     category = "air-filtering",
     hidden_from_player_crafting = true,
     enabled = false,
-    energy_required = 120, -- time to craft in seconds (at crafting speed 1)
+    energy_required = 240, -- time to craft in seconds (at crafting speed 1)
     ingredients = {{"air-filter-clean", 1}},
     result = "air-filter-dirty"
 }
@@ -104,9 +104,9 @@ local airFilterCleaned = {
 local treePlanter = {
     type = "recipe",
     name = "tree-planter",
-    enabled = true,
+    enabled = false,
     energy_required = 10, -- time to craft in seconds (at crafting speed 1)
-    ingredients = {{"electronic-circuit", 5}, {"iron-gear-wheel", 5}, {"steel-plate", 15}},
+    ingredients = {{"inserter", 2}, {"empty-barrel", 10}, {"iron-plate", 20}},
     result = "tree-planter"
 }
 
@@ -121,8 +121,8 @@ local plantedTree = {
     category = "tree-planting",
     enabled = true,
     hidden = true,
-    energy_required = 5, -- time to craft in seconds (at crafting speed 1)
-    ingredients = {{type="fluid", name="water", amount=50}},
+    energy_required = 60, -- time to craft in seconds (at crafting speed 1)
+    ingredients = {{type="fluid", name="water", amount=100}},
     result = "planted-tree"
 }
 

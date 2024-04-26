@@ -140,11 +140,39 @@ local airPurifierTechnology = {
     }
 }
 
+------------------
+-- Tree Planter --
+------------------
+
+local treePlanterTechnology = {
+    type = "technology",
+    name = "tree-planter",
+    icon = "__better-ecology__/graphics/tree-planter/tree-icon.png",
+    icon_size = 256,
+    prerequisites = {"wind-turbine"},
+    effects = {
+        {
+            type = "unlock-recipe",
+            recipe = "tree-planter"
+        }
+    },
+    unit = {
+        count = 500,
+        ingredients = {
+            {"automation-science-pack", 1},
+            {"logistic-science-pack", 1},
+            {"chemical-science-pack", 1}
+        },
+        time = 45
+    }
+}
+
 
 data:extend{
     ecologyModule1Technology, 
     ecologyModule2Technology, 
     ecologyModule3Technology, 
     windTurbineTechnology, 
-    airPurifierTechnology
+    airPurifierTechnology,
+    treePlanterTechnology
 }
