@@ -83,7 +83,7 @@ local windTurbineTechnology = {
     name = "wind-turbine",
     icon = "__better-ecology__/graphics/wind-turbine/wind-turbine-icon.png",
     icon_size = 128,
-    prerequisites = {"solar-energy"},
+    prerequisites = {"solar-energy", "chemical-science-pack"},
     effects = {
         {
             type = "unlock-recipe",

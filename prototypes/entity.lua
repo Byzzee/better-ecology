@@ -49,17 +49,21 @@ local windTurbine = {
     collision_mask = {"player-layer", "item-layer", "object-layer", "water-tile"},
 	collision_box = {{-0.65, -0.65}, {0.65, 0.65}},
 	selection_box = {{-0.65, -0.65}, {0.65, 0.65}},
+    drawing_box   = {{-1.00, -4.25}, {1.00, 0.25}},
     energy_source = {
         type = "electric",
 		usage_priority = "primary-output",
-		buffer_capacity = "30kJ",
-		output_flow_limit = "30kW",
+		buffer_capacity = "42kJ",
+		output_flow_limit = "42kW",
         input_flow_limit = "0kW",
         render_no_power_icon = false,
     },
     energy_production = "30kW",
     energy_usage = "0kW",
-    working_sound = sounds.wind_turbine_working,
+    working_sound = {
+        sound = sounds.wind_turbine_working,
+        idle_sound = sounds.wind_turbine_working
+    },
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,
     vehicle_impact_sound = sounds.vehicle_impact,
@@ -116,7 +120,7 @@ local airPurifier = {
 		output_flow_limit = "0W",
         input_flow_limit = "200kW",
         render_no_power_icon = false,
-        emissions_per_minute = -10000 -- За счёт этого и "работает" очищениецвцвцв
+        emissions_per_minute = -10000 -- За счёт этого и "работает" очищение
     },
     energy_usage = "97087W", -- Чтобы в итоге ровно соточка получилась
     working_sound = sounds.air_purifier_working,
@@ -231,7 +235,8 @@ local treePlanter = {
                     line_length = 8,
                     shift = util.by_pixel(4.5, -3),
                     animation_speed = 0.5,
-                    draw_as_light = true
+                    tint = {r=1.0, g=1.0, b=0.75, a=0.25},
+                    draw_as_glow = true
                 },
                 {
                     filename = "__better-ecology__/graphics/tree-planter/tree-planter-north-shadow.png",

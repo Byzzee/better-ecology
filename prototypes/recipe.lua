@@ -121,7 +121,7 @@ local plantedTree = {
     category = "tree-planting",
     enabled = true,
     hidden = true,
-    energy_required = 60, -- time to craft in seconds (at crafting speed 1)
+    energy_required = 30, -- time to craft in seconds (at crafting speed 1)
     ingredients = {{type="fluid", name="water", amount=100}},
     result = "planted-tree"
 }
