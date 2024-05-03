@@ -1,10 +1,19 @@
 -- Первый запуск
 script.on_init(function()
-    -- Инициализация
+    -- Инициализация глобальных переменных
     global.tree_planters = {}
     global.air_purifiers = {}
     global.wind_turbines = {}
     global.wind_speed = 500 -- 30kW
+end)
+
+-- Первый запуск после изменения конфигурации
+script.on_configuration_changed(function()
+    -- Инициализация недостающих глобальных переменных
+    global.tree_planters = global.tree_planters or {}
+    global.air_purifiers = global.air_purifiers or {}
+    global.wind_turbines = global.wind_turbines or {}
+    global.wind_speed = global.wind_speed or 500
 end)
 
 -- TODO: Добавить логику очищения клеток, соседних с очистителем воздуха
