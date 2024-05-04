@@ -90,8 +90,8 @@ local function unregisterModEntity(entity)
     local entityGroup
     if entity.name == "tree-planter" then
         entityGroup = "tree_planters"
-    elseif entity.name == "air_purifier" then
-        entityGroup = "air-purifiers"
+    elseif entity.name == "air-purifier" then
+        entityGroup = "air_purifiers"
     elseif entity.name == "wind-turbine" then
         entityGroup = "wind_turbines"
     end
