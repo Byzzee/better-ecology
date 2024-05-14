@@ -120,7 +120,7 @@ local airPurifier = {
 		output_flow_limit = "0W",
         input_flow_limit = "200kW",
         render_no_power_icon = false,
-        emissions_per_minute = -10000 -- За счёт этого и "работает" очищение
+        emissions_per_minute = 0
     },
     energy_usage = "97087W", -- Чтобы в итоге ровно соточка получилась
     working_sound = sounds.air_purifier_working,

@@ -36,6 +36,7 @@ script.on_event(defines.events.on_tick, function(event)
     end
     -- Каждые пол секунды (30 тиков)
     if event.tick % 30 == 0 then
+        -- Изменение скорости ветра
         if #global.wind_turbines ~= 0 then
             local deltaSpeed = math.random(-1, 1) * math.random() * 20
             -- Производство энергии в диапазоне от 18 до 42 кВт
@@ -44,6 +45,19 @@ script.on_event(defines.events.on_tick, function(event)
             end
             for _, turbine in ipairs(global.wind_turbines) do
                 turbine.power_production = global.wind_speed -- 100 = 6kW
+            end
+        end
+        -- Очистка воздуха
+        for _, purifier in ipairs(global.air_purifiers) do
+            if purifier.is_crafting() then
+                -- 32 на 32 - это один игровой чанк
+                -- получается один очиститель суммарно очищает квадрат из 9 чанков
+                for x = -32, 32, 32 do
+                    for y = -32, 32, 32 do
+                        local position = {x = purifier.position.x + x, y = purifier.position.y + y}
+                        purifier.surface.pollute(position, -100)
+                    end
+                end
             end
         end
     end
