@@ -99,6 +99,14 @@ script.on_event(defines.events.script_raised_built, function(event)
     }
 )
 
+script.on_event(defines.events.script_raised_revive, function(event)
+    registerModEntity(event.entity) end, {
+        {filter = "name", name = "tree-planter"},
+        {filter = "name", name = "air-purifier", mode = "or"},
+        {filter = "name", name = "wind-turbine", mode = "or"}
+    }
+)
+
 -- Обработка удаления построек
 local function unregisterModEntity(entity)
     local entityGroup
