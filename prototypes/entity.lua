@@ -46,7 +46,10 @@ local windTurbine = {
     dying_explosion = "medium-explosion",
     max_health = 200,
     minable = {mining_time = 0.5, result = "wind-turbine"},
-    collision_mask = {"player-layer", "item-layer", "object-layer", "water-tile"},
+    collision_mask = {layers = {
+        item = true, meltable = true, object = true, player = true,
+        water_tile = true, is_object = true, is_lower_object = true
+    }},
 	collision_box = {{-0.65, -0.65}, {0.65, 0.65}},
 	selection_box = {{-0.65, -0.65}, {0.65, 0.65}},
     drawing_box   = {{-1.00, -4.25}, {1.00, 0.25}},
@@ -107,6 +110,10 @@ local airPurifier = {
     max_health = 200,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
+    collision_mask = {layers = {
+        item = true, meltable = true, object = true, player = true,
+        water_tile = true, is_object = true, is_lower_object = true
+    }},
     collision_box = {{-0.8, -0.6}, {0.8, 0.6}},
     selection_box = {{-1.0, -1.0}, {1.0, 1.0}},
     source_inventory_size = 1,
@@ -120,14 +127,14 @@ local airPurifier = {
 		output_flow_limit = "0W",
         input_flow_limit = "200kW",
         render_no_power_icon = false,
-        emissions_per_minute = 0
+        emissions_per_second = 0
     },
     energy_usage = "97087W", -- Чтобы в итоге ровно соточка получилась
     working_sound = sounds.air_purifier_working,
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,
     vehicle_impact_sound = sounds.vehicle_impact,
-    animation = {
+    graphics_set = { animation = {
         layers = {
             {
                 filename = "__better-ecology__/graphics/air-purifier/air-purifier.png",
@@ -149,7 +156,7 @@ local airPurifier = {
                 shift = util.by_pixel(64, 0)
             }
         }
-    }
+    }}
 }
 
 ------------------
@@ -165,6 +172,10 @@ local treePlanter = {
     minable = {mining_time = 0.1, result = "tree-planter"},
     max_health = 100,
     corpse = "big-remnants",
+    collision_mask = {layers = {
+        item = true, meltable = true, object = true, player = true,
+        water_tile = true, is_object = true, is_lower_object = true
+    }},
     collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     crafting_speed = 1,
@@ -173,32 +184,30 @@ local treePlanter = {
     ingredient_count = 1,
     fluid_boxes = {
         {
-            base_area = 3,
-            height = 1,
-            base_level = -1,
-            pipe_connections = {
-                {
-                    type = "input",
-                    positions = {{1, 2}, {-2, 1}, {-1, -2}, {2, -1}}
-                },
-            },
+            volume = 300,
+            pipe_connections = {{
+                flow_direction = "input",
+                direction = defines.direction.south,
+                position = {1, 1}
+                -- positions = {{1, 2}, {-2, 1}, {-1, -2}, {2, -1}}
+            }},
             pipe_covers = {
                 -- На самом деле не используются, потому что постройку нельзя поворачивать
                 north = {
-                    filename="__base__/graphics/entity/pipe-covers/hr-pipe-cover-north.png",
+                    filename="__base__/graphics/entity/pipe-covers/pipe-cover-north.png",
                     size = 128
                 },
                 west = {
-                    filename="__base__/graphics/entity/pipe-covers/hr-pipe-cover-west.png",
+                    filename="__base__/graphics/entity/pipe-covers/pipe-cover-west.png",
                     size = 128
                 },
                 east = {
-                    filename="__base__/graphics/entity/pipe-covers/hr-pipe-cover-east.png",
+                    filename="__base__/graphics/entity/pipe-covers/pipe-cover-east.png",
                     size = 128
                 },
                 -- А вот эта используется
                 south = {
-                    filename="__base__/graphics/entity/pipe-covers/hr-pipe-cover-south.png",
+                    filename="__base__/graphics/entity/pipe-covers/pipe-cover-south.png",
                     size = 128,
                     scale = 0.5,
                 },
@@ -210,10 +219,10 @@ local treePlanter = {
     energy_usage = "19355W",
     energy_source = {
         type = "electric",
-        emissions_per_minute = 0,
+        emissions_per_second = 0,
         usage_priority = "secondary-input"
     },
-    animation = {
+    graphics_set = { animation = {
         north = {
             layers = {
                 {
@@ -251,103 +260,7 @@ local treePlanter = {
                 }
             }
         },
---         west = {
---             layers = {
---                 {
---                     filename = "__better-ecology__/graphics/tree-planter/tree-planter-west-base.png",
---                     width = 179,
---                     height = 208,
---                     scale = 0.495,
---                     frame_count = 64,
---                     line_length = 8,
---                     shift = util.by_pixel(4.5, -3)
---                 },
---                 {
---                     filename = "__better-ecology__/graphics/tree-planter/tree-planter-west-glow.png",
---                     width = 179,
---                     height = 208,
---                     scale = 0.495,
---                     frame_count = 64,
---                     line_length = 8,
---                     shift = util.by_pixel(4.5, -3),
---                     draw_as_glow = true
---                 },
---                 {
---                     filename = "__better-ecology__/graphics/tree-planter/tree-planter-west-shadow.png",
---                     width = 300,
---                     height = 200,
---                     scale = 0.495,
---                     frame_count = 64,
---                     line_length = 8,
---                     draw_as_shadow = true
---                 }
---             }
---         },
---         east = {
---             layers = {
---                 {
---                     filename = "__better-ecology__/graphics/tree-planter/tree-planter-east-base.png",
---                     width = 179,
---                     height = 208,
---                     scale = 0.495,
---                     frame_count = 64,
---                     line_length = 8,
---                     shift = util.by_pixel(4.5, -3)
---                 },
---                 {
---                     filename = "__better-ecology__/graphics/tree-planter/tree-planter-east-glow.png",
---                     width = 179,
---                     height = 208,
---                     scale = 0.495,
---                     frame_count = 64,
---                     line_length = 8,
---                     shift = util.by_pixel(4.5, -3),
---                     draw_as_glow = true
---                 },
---                 {
---                     filename = "__better-ecology__/graphics/tree-planter/tree-planter-east-shadow.png",
---                     width = 300,
---                     height = 200,
---                     scale = 0.495,
---                     frame_count = 64,
---                     line_length = 8,
---                     draw_as_shadow = true
---                 }
---             }
---         },
---         south = {
---             layers = {
---                 {
---                     filename = "__better-ecology__/graphics/tree-planter/tree-planter-south-base.png",
---                     width = 179,
---                     height = 208,
---                     scale = 0.495,
---                     frame_count = 64,
---                     line_length = 8,
---                     shift = util.by_pixel(4.5, -3)
---                 },
---                 {
---                     filename = "__better-ecology__/graphics/tree-planter/tree-planter-south-glow.png",
---                     width = 179,
---                     height = 208,
---                     scale = 0.495,
---                     frame_count = 64,
---                     line_length = 8,
---                     shift = util.by_pixel(4.5, -3),
---                     draw_as_glow = true
---                 },
---                 {
---                     filename = "__better-ecology__/graphics/tree-planter/tree-planter-south-shadow.png",
---                     width = 300,
---                     height = 200,
---                     scale = 0.495,
---                     frame_count = 64,
---                     line_length = 8,
---                     draw_as_shadow = true
---                 }
---             }
---         },
-    },
+    }},
 }
 
 

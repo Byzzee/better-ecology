@@ -10,8 +10,13 @@ local ecologyModuleRecipe = {
     name = "ecology-module",
     enabled = false,
     energy_required = 5, -- time to craft in seconds (at crafting speed 1)
-    ingredients = {{"effectivity-module", 1}, {"air-filter-clean", 1}},
-    result = "ecology-module"
+    ingredients = {
+        {type="item", name="efficiency-module", amount=1},
+        {type="item", name="air-filter-clean", amount=1}
+    },
+    results = {
+        {type="item", name="ecology-module", amount=1}
+    }
 }
 
 local ecologyModule2Recipe = {
@@ -19,8 +24,13 @@ local ecologyModule2Recipe = {
     name = "ecology-module-2",
     enabled = false,
     energy_required = 10, -- time to craft in seconds (at crafting speed 1)
-    ingredients = {{"effectivity-module-2", 1}, {"air-filter-clean", 2}},
-    result = "ecology-module-2"
+    ingredients = {
+        {type="item", name="efficiency-module-2", amount=1},
+        {type="item", name="air-filter-clean", amount=2}
+    },
+    results = {
+        {type="item", name="ecology-module-2", amount=1}
+    }
 }
 
 local ecologyModule3Recipe = {
@@ -28,8 +38,13 @@ local ecologyModule3Recipe = {
     name = "ecology-module-3",
     enabled = false,
     energy_required = 20, -- time to craft in seconds (at crafting speed 1)
-    ingredients = {{"effectivity-module-3", 1}, {"air-filter-clean", 5}},
-    result = "ecology-module-3"
+    ingredients = {
+        {type="item", name="efficiency-module-3", amount=1},
+        {type="item", name="air-filter-clean", amount=5}
+    },
+    results = {
+        {type="item", name="ecology-module-3", amount=1}
+    }
 }
 
 ------------------
@@ -41,8 +56,14 @@ local windTurbine = {
     name = "wind-turbine",
     enabled = false,
     energy_required = 20, -- time to craft in seconds (at crafting speed 1)
-    ingredients = {{"copper-cable", 5}, {"plastic-bar", 15}, {"steel-plate", 15}},
-    result = "wind-turbine"
+    ingredients = {
+        {type="item", name="copper-cable", amount=5},
+        {type="item", name="plastic-bar", amount=15},
+        {type="item", name="steel-plate", amount=15}
+    },
+    results = {
+        {type="item", name="wind-turbine", amount=1}
+    }
 }
 
 ------------------
@@ -54,8 +75,14 @@ local airPurifier = {
     name = "air-purifier",
     enabled = false,
     energy_required = 10, -- time to craft in seconds (at crafting speed 1)
-    ingredients = {{"electronic-circuit", 5}, {"iron-gear-wheel", 5}, {"steel-plate", 15}},
-    result = "air-purifier"
+    ingredients = {
+        {type="item", name="electronic-circuit", amount=5},
+        {type="item", name="iron-gear-wheel", amount=5},
+        {type="item", name="steel-plate", amount=15}
+    },
+    results = {
+        {type="item", name="air-purifier", amount=1}
+    }
 }
 
 -----------------
@@ -72,8 +99,13 @@ local airFilterClean = {
     name = "air-filter-clean",
     enabled = false,
     energy_required = 5, -- time to craft in seconds (at crafting speed 1)
-    ingredients = {{"iron-plate", 5}, {"coal", 5}},
-    result = "air-filter-clean"
+    ingredients = {
+        {type="item", name="iron-plate", amount=5},
+        {type="item", name="coal", amount=5}
+    },
+    results = {
+        {type="item", name="air-filter-clean", amount=1}
+    }
 }
 
 local airFilterDirty = {
@@ -83,8 +115,12 @@ local airFilterDirty = {
     hidden_from_player_crafting = true,
     enabled = false,
     energy_required = 240, -- time to craft in seconds (at crafting speed 1)
-    ingredients = {{"air-filter-clean", 1}},
-    result = "air-filter-dirty"
+    ingredients = {
+        {type="item", name="air-filter-clean", amount=1}
+    },
+    results = {
+        {type="item", name="air-filter-dirty", amount=1}
+    }
 }
 
 local airFilterCleaned = {
@@ -93,8 +129,12 @@ local airFilterCleaned = {
     hidden_from_player_crafting = true,
     enabled = false,
     energy_required = 115, -- time to craft in seconds (at crafting speed 1)
-    ingredients = {{"air-filter-dirty", 1}},
-    result = "air-filter-clean"
+    ingredients = {
+        {type="item", name="air-filter-dirty", amount=1}
+    },
+    results = {
+        {type="item", name="air-filter-clean", amount=1}
+    }
 }
 
 ------------------
@@ -106,8 +146,14 @@ local treePlanter = {
     name = "tree-planter",
     enabled = false,
     energy_required = 10, -- time to craft in seconds (at crafting speed 1)
-    ingredients = {{"inserter", 2}, {"empty-barrel", 10}, {"iron-plate", 20}},
-    result = "tree-planter"
+    ingredients = {
+        {type="item", name="inserter", amount=2},
+        {type="item", name="barrel", amount=10},
+        {type="item", name="iron-plate", amount=20}
+    },
+    results = {
+        {type="item", name="tree-planter", amount=1}
+    }
 }
 
 local treePlantingCategory = {
@@ -122,8 +168,12 @@ local plantedTree = {
     enabled = true,
     hidden = true,
     energy_required = 30, -- time to craft in seconds (at crafting speed 1)
-    ingredients = {{type="fluid", name="water", amount=100}},
-    result = "planted-tree"
+    ingredients = {
+        {type="fluid", name="water", amount=100}
+    },
+    results = {
+        {type="item", name="planted-tree", amount=1}
+    }
 }
 
 

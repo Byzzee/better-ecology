@@ -10,7 +10,7 @@ local ecologyModule1Technology = {
     name = "ecology-module",
     icon = "__better-ecology__/graphics/modules/ecology-module-technology.png",
     icon_size = 256,
-    prerequisites = {"effectivity-module"},
+    prerequisites = {"efficiency-module"},
     effects = {
         {
             type = "unlock-recipe",
@@ -32,7 +32,7 @@ local ecologyModule2Technology = {
     name = "ecology-module-2",
     icon = "__better-ecology__/graphics/modules/ecology-module-2-technology.png",
     icon_size = 256,
-    prerequisites = {"effectivity-module-2"},
+    prerequisites = {"efficiency-module-2"},
     effects = {
         {
             type = "unlock-recipe",
@@ -55,7 +55,7 @@ local ecologyModule3Technology = {
     name = "ecology-module-3",
     icon = "__better-ecology__/graphics/modules/ecology-module-3-technology.png",
     icon_size = 256,
-    prerequisites = {"effectivity-module-3"},
+    prerequisites = {"efficiency-module-3"},
     effects = {
         {
             type = "unlock-recipe",

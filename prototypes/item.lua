@@ -21,8 +21,8 @@ local ecologyModule = {
     tier = 1,
     stack_size = 50,
     effect = {
-        pollution = {bonus = -0.2},
-        consumption = {bonus = -0.3}
+        pollution = -0.2,
+        consumption = -0.3
     }
 }
 
@@ -37,8 +37,8 @@ local ecologyModule2 = {
     tier = 2,
     stack_size = 50,
     effect = {
-        pollution = {bonus = -0.3},
-        consumption = {bonus = -0.4}
+        pollution = -0.3,
+        consumption = -0.4
     }
 }
 
@@ -53,8 +53,8 @@ local ecologyModule3 = {
     tier = 3,
     stack_size = 50,
     effect = {
-        pollution = {bonus = -0.4},
-        consumption = {bonus = -0.5}
+        pollution = -0.4,
+        consumption = -0.5
     }
 }
 

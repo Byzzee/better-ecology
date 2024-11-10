@@ -3,7 +3,7 @@
     "version": "0.2.0",
     "title": "Better Ecology",
     "author": "Byzzee",
-    "factorio_version": "1.1 - 2.0",
+    "factorio_version": "2.0",
     "dependencies": ["base >= 1.1"],
     "description": "Adds in some stuff such as wind turbines, tree planters and air filters to make your factory a bit more eco-friendly ^_^"
   }
