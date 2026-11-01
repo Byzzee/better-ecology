@@ -14,10 +14,6 @@ local sounds = {
         filename = "__base__/sound/machine-close.ogg",
         volume = 0.5
     },
-    vehicle_impact = {
-        filename = "__base__/sound/car-metal-impact.ogg",
-        volume = 0.5
-    },
     wind_turbine_working = {
         filename = "__better-ecology__/sound/wind-turbine-working.wav",
         volume = 2.0
@@ -42,7 +38,7 @@ local windTurbine = {
       {"wind-turbine.generates-electricity"},
     },
     flags = {"player-creation","placeable-neutral", "not-rotatable"},
-    remnants = "medium-small-remnants",
+    corpse = "medium-small-remnants",
     dying_explosion = "medium-explosion",
     max_health = 200,
     minable = {mining_time = 0.5, result = "wind-turbine"},
@@ -69,7 +65,7 @@ local windTurbine = {
     },
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,
-    vehicle_impact_sound = sounds.vehicle_impact,
+    impact_category = "metal",
     continuous_animation = true,
     animation = {
         layers = {
@@ -133,7 +129,7 @@ local airPurifier = {
     working_sound = sounds.air_purifier_working,
     open_sound = sounds.machine_open,
     close_sound = sounds.machine_close,
-    vehicle_impact_sound = sounds.vehicle_impact,
+    impact_category = "metal",
     graphics_set = { animation = {
         layers = {
             {
